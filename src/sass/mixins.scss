@@ -1,4 +1,4 @@
-$breakpoint: 1170px;
+$breakpoint: 800px;
 
 @mixin desktop {
   @media (min-width: $breakpoint) {

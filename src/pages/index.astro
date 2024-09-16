@@ -1,61 +1,38 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import HorizontalSlides from '@/components/HorizontalSlides.svelte'
+import Hero from '@/components/Hero.svelte'
+import Menu from '@/components/Menu.svelte'
 ---
 
 <style lang="scss">
-  .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .waves {
+    width: 100%;
+    height: 100px;
+    border: 2px solid red;
+    background-color: white;
 
-    h2 {
-      font-size: 60px;
-      font-family: 'Oswald';
-      margin-left: 8px;
-    }
-
-    h1 span {
-      display: block;
-      font-size: 200px;
-      font-family: 'Oswald';
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .reveal {
-      color: #0000;
-      --g: no-repeat linear-gradient(var(--colorBrand) 0 0) 0 0;
-      background: var(--g), var(--g);
-      background-size: 0 100%;
-      -webkit-background-clip: padding-box, text;
-      background-clip: padding-box, text;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-      animation:
-        t 1.2s 0.5s both,
-        b 1.2s 1.3s both;
-
-      &.delay {
-        animation-delay: 2s;
-      }
-    }
-    @keyframes t {
-      to {
-        background-size: 150% 100%;
-      }
-    }
-    @keyframes b {
-      to {
-        background-position:
-          -200% 0,
-          0 0;
-      }
+    svg {
+      height: 100%;
+      width: 100%;
     }
   }
-  p {
-    padding: 10px 0;
+  .first-text {
+    padding: 100px 0;
+    min-height: 100vh;
+    background-color: white;
+
+    h3 {
+      font-size: 30px;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    p,
+    h3,
+    b {
+      color: var(--colorBackground);
+    }
   }
 
   .slide {
@@ -71,46 +48,51 @@ import HorizontalSlides from '@/components/HorizontalSlides.svelte'
 </style>
 
 <Layout title="Miquel Torán">
-  <div class="g-wrapper">
-    <div class="hero">
-      <h2>Miquel Torán</h2>
-      <h1>
-        <span class="reveal">Potenciador</span>
-        <span class="reveal delay">Digital</span>
-      </h1>
-    </div>
+  <Menu client:load />
+  <Hero />
 
-    <h3>Las páginas web no sirven para nada.</h3>
-
-    <p>Matizo.</p>
-
-    <p>
-      Las páginas web <b>por si solas</b> no sirven para nada.
-    </p>
-    <p>Son un medio para comunicar un mensaje, un escaparte al mundo entero, una forma de conectar puntos.</p>
-
-    <p>Pero lo que sea que ofreces tiene que ser bueno, muy bueno, algo que ayude a las personas realmente, eso es el núcleo de todo.</p>
-
-    <p>Mi trabajo consiste en multiplicar esa esencia, llegar a más gente y dejar una huella en ellos.</p>
-
-    <p>¿Cómo? Haciendo que el envoltorio sea bonito, funcional, elegante y que transmita el mensaje que quieres dar.</p>
-
-    <p>Personalmente me causa muchisima desconfianza entrar en una empresa y ver que la web esta descuidada.</p>
-
-    <p>
-      "¿Si son chapuzas con esto, lo serán para todo?"<br />"¿Quién ha decidido hacer esto y quien ha dado el visto bueno?"<br />"¿Por qué
-      son tan descuidados?"
-    </p>
-
-    <p>
-      Reconozco que mi opinión esta sesgada porque me dedico a ello, de todas formas lee mi trayectoria y entenderás por qué pienso asi y
-      por qué el subconsciente de tus clientes lo hacen también.
-    </p>
-
-    <p>
-      No es una historia de mi parte bonita, es una historia real, me identifico como humano, asi que verás mis fortalezas y puntos debiles
-    </p>
+  <div class="waves">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#e7008a"
+        fill-opacity="1"
+        d="M0,192L24,176C48,160,96,128,144,138.7C192,149,240,203,288,234.7C336,267,384,277,432,261.3C480,245,528,203,576,165.3C624,128,672,96,720,101.3C768,107,816,149,864,165.3C912,181,960,171,1008,176C1056,181,1104,203,1152,224C1200,245,1248,267,1296,261.3C1344,256,1392,224,1416,208L1440,192L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"
+      ></path>
+    </svg>
   </div>
+
+  <div class="first-text">
+    <div class="g-wrapper">
+      <h3>Las páginas web no sirven para nada.</h3>
+
+      <p>Matizo.</p>
+      <br />
+      <p>
+        Las páginas web <b>por si solas</b> no sirven para nada.
+      </p>
+      <p>Son un medio para comunicar un mensaje, un escaparte al mundo entero, una forma de conectar puntos.</p>
+      <p>Pero lo que sea que ofreces tiene que ser bueno, muy bueno, algo que ayude a las personas realmente, eso es el núcleo de todo.</p>
+      <p>Mi trabajo consiste en multiplicar esa esencia, llegar a más gente y dejar una huella en ellos.</p>
+      <p>¿Cómo? Haciendo que el envoltorio sea bonito, funcional, elegante y que transmita el mensaje que quieres dar.</p>
+      <br />
+      <p>Personalmente me causa muchisima desconfianza entrar en una empresa y ver que la web esta descuidada.</p>
+      <p>
+        "¿Si son chapuzas con esto, lo serán para todo?"<br />"¿Quién ha decidido hacer esto y quien ha dado el visto bueno?"<br />"¿Por qué
+        son tan descuidados?"
+      </p>
+      <br />
+      <p>
+        Reconozco que mi opinión esta sesgada porque me dedico a ello, de todas formas lee mi trayectoria y entenderás por qué pienso asi y
+        por qué el subconsciente de tus clientes lo hacen también.
+      </p>
+
+      <p>
+        No es una historia de mi parte bonita, es una historia real, me identifico como humano, asi que verás mis fortalezas y puntos
+        debiles
+      </p>
+    </div>
+  </div>
+
   <HorizontalSlides>
     <div class="slide">
       <div class="slide-content g-wrapper">
