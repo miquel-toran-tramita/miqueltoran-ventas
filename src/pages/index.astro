@@ -1,19 +1,87 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import HorizontalSlides from '@/components/HorizontalSlides.svelte'
 ---
 
 <style lang="scss">
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      font-size: 60px;
+      font-family: 'Oswald';
+      margin-left: 8px;
+    }
+
+    h1 span {
+      display: block;
+      font-size: 200px;
+      font-family: 'Oswald';
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .reveal {
+      color: #0000;
+      --g: no-repeat linear-gradient(var(--colorBrand) 0 0) 0 0;
+      background: var(--g), var(--g);
+      background-size: 0 100%;
+      -webkit-background-clip: padding-box, text;
+      background-clip: padding-box, text;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      animation:
+        t 1.2s 0.5s both,
+        b 1.2s 1.3s both;
+
+      &.delay {
+        animation-delay: 2s;
+      }
+    }
+    @keyframes t {
+      to {
+        background-size: 150% 100%;
+      }
+    }
+    @keyframes b {
+      to {
+        background-position:
+          -200% 0,
+          0 0;
+      }
+    }
+  }
   p {
     padding: 10px 0;
   }
+
+  .slide {
+    display: flex;
+    align-items: center;
+    h3 {
+      font-family: 'Oswald';
+      color: var(--colorBrand);
+      font-size: 50px;
+      margin-top: 20px;
+    }
+  }
 </style>
 
-<Layout title="example">
+<Layout title="Miquel Torán">
   <div class="g-wrapper">
-    <h2>Miquel Torán</h2>
-    <h1>Potenciador digital</h1>
+    <div class="hero">
+      <h2>Miquel Torán</h2>
+      <h1>
+        <span class="reveal">Potenciador</span>
+        <span class="reveal delay">Digital</span>
+      </h1>
+    </div>
 
-    <p>Las páginas web no sirven para nada.</p>
+    <h3>Las páginas web no sirven para nada.</h3>
+
     <p>Matizo.</p>
 
     <p>
@@ -42,64 +110,123 @@ import Layout from '@/layouts/Layout.astro'
     <p>
       No es una historia de mi parte bonita, es una historia real, me identifico como humano, asi que verás mis fortalezas y puntos debiles
     </p>
-
-    ------------
-
-    <h3>Fase 1: La incubadora</h3>
-    <p>
-      Yo con mis 16 añitos no tenía ni idea de a qué me quería dedicar, aún no me conocía bien a mi mismo, sólo sabia que me gustaba mucho
-      jugar a videojuegos y al futbol. Siempre he sido un estudiante especialista en rozar el aprobado haciendo lo mínimo, tenía un perfil
-      bajo, sin llamar la atención, sin ningún talento especial.
-    </p>
-
-    <p>
-      En secundaria, por inercia elegí una optativa de programación, pocos meses después me llamaban la atención por avanzar mi proyecto de
-      programación (usando Scratch) en las otras clases.
-    </p>
-
-    <p>
-      En lo que estudios se refiere, descubrí que no era persona perezosa, sino selectiva. Cual francotirador, elijo una cosa, me obsesiono
-      y la llevo hasta las últimas.
-    </p>
-
-    <h3>Fase 2: El despertar</h3>
-    <p>
-      Con esa experencia no me costó nada elegir la FP de Desarrollo de Aplicaciones Web, fué una etapa bastante placentera, aprender pasó
-      de ser un coñazo a algo valioso (aunque algunas me enseñaban cosas desfasadas). Quise aprovechar esa comodidad y me aventuré a meterme
-      en el Erasmus que ofrecían. Estuve viviendo dos meses en Varsovia trabajando de técnico inforático en una empresa polaca. Finalmente
-      culminé mis estudios con un proyecto de fin de curso muy especial. Aprovechando mi faceta ajedrecista, hice un Ajedrez en 3D que
-      asombró a toda la clase, Aje3d se llamaba (desbordaba ingenio también). Lo hice yo solo (en ese entonces no se me daba muy bien
-      trabajar en equipo) y me pusieron un rotundo 10, hasta el punto que años mas tarde me llamaron para enseñarlo y dar una charla a las
-      futuras generaciones de DAW de "La Pineda Badalona".
-    </p>
-
-    <h3>Fase 3: El chasco</h3>
-    <p>
-      Entrar al mundo laboral fué una decepción, no tanto por las empresas con las que trabajé y que me siento agradecido por haberme dado
-      esas oportunidades y ser parte de mi crecimiento. Trabajé arreglando routers y de programador con Wordpress, pero no encontraba nada
-      que me llenase entonces fué cuando dejé mi último empleo y me tomé un año sabático estudiando nuevas tecnologías de programación que
-      no me enseñaron en la FP pero que ví que las empresas demandaban.
-    </p>
-
-    <p>
-      Aprendí VueJS entre otras cosas y empecé a buscar trabajo otra vez, después de meses sin que nadie me abriese la puerta, una
-      importante inmobiliaria online española me dió la oportunidad.
-    </p>
-
-    <p>
-      Supieron ver mas allá de los títulos y experencia profesional. Allí estaba especializado en ser Frontend, era una parte muy pequeña de
-      un gran engranaje con sus ventajas e inconvenientes. El proyecto era un monstruo indomable, cambiar un botón de color requeria un
-      proceso y unos protocolos muy largos. Yo tenía muchas ideas para simplificar y optimizar el código, pero era demasiado arriesgado
-      tocar una máquina en marcha que ya funcionaba.
-    </p>
-
-    <h3>Fase 4: La epifanía</h3>
-    <p>
-      Con todo lo vivido me di cuenta de muchas cosas, programar por programar lo puede aprender cualquiera, lo que a mi me fascinaba iba un
-      poco más lejos.
-    </p>
-
-    <p>Para mi programar es una herramienta de creación, un puente entre las ideas y el mundo real.</p>
-    <p>Me encanta que las cosas sean lo más eficientes posible</p>
   </div>
+  <HorizontalSlides>
+    <div class="slide">
+      <div class="slide-content g-wrapper">
+        <h3>FASE 1: INCUBADORA</h3>
+        <p>
+          Yo con mis 16 añitos no tenía ni idea de a qué me quería dedicar, aún no me conocía bien a mi mismo, sólo sabia que me gustaba
+          mucho jugar a videojuegos y al futbol. Siempre he sido un estudiante especialista en rozar el aprobado haciendo lo mínimo, tenía
+          un perfil bajo, sin llamar la atención, sin ningún talento especial.
+        </p>
+
+        <p>
+          En secundaria, por inercia elegí una optativa de programación, pocos meses después me llamaban la atención por avanzar mi proyecto
+          de programación (usando Scratch) en las otras clases.
+        </p>
+
+        <p>
+          En lo que estudios se refiere, descubrí que no era persona perezosa, sino selectiva. Cual francotirador, elijo una cosa, me
+          obsesiono y la llevo hasta las últimas.
+        </p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content g-wrapper">
+        <h3>FASE 2: DESPERTAR</h3>
+        <p>
+          Con esa experencia no me costó nada elegir la FP de Desarrollo de Aplicaciones Web, fué una etapa bastante placentera, aprender
+          pasó de ser un coñazo a algo valioso. Quise aprovechar esa comodidad y me aventuré a meterme en el Erasmus que ofrecían. Estuve
+          viviendo dos meses en Varsovia trabajando de técnico inforático en una empresa polaca. Finalmente culminé mis estudios con un
+          proyecto de fin de curso muy especial.
+        </p>
+
+        <p>
+          Aprovechando mi faceta ajedrecista, hice un Ajedrez en 3D que asombró a toda la clase, Aje3d se llamaba (desbordaba ingenio
+          también). Lo hice yo solo (en ese entonces no se me daba muy bien trabajar en equipo) y me pusieron un rotundo 10, hasta el punto
+          que años mas tarde me llamaron para enseñarlo y dar una charla a las futuras generaciones de DAW de "La Pineda Badalona".
+        </p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content g-wrapper">
+        <h3>FASE 3: CHASCO</h3>
+        <p>
+          Entrar al mundo laboral fué una decepción, no tanto por las empresas con las que trabajé y que me siento agradecido por haberme
+          dado esas oportunidades y ser parte de mi crecimiento. Trabajé arreglando routers y de programador con Wordpress, pero no
+          encontraba nada que me llenase entonces fué cuando dejé mi último empleo y me tomé un año sabático estudiando nuevas tecnologías
+          de programación que no me enseñaron en la FP pero que ví que las empresas demandaban.
+        </p>
+
+        <p>Paralelamente también descubrí mi amor por la lectura, en especial por libros de desarrollo personal, salud y psicología.</p>
+
+        <p>
+          Aprendí VueJS entre otras cosas y empecé a buscar trabajo otra vez, después de meses sin que nadie me abriese la puerta, una
+          importante inmobiliaria online española me dió la oportunidad.
+        </p>
+
+        <p>
+          Supieron ver mas allá de los títulos y experencia profesional. Allí estaba especializado en ser Frontend, era una parte muy
+          pequeña de un gran engranaje con sus ventajas e inconvenientes. El proyecto era un monstruo indomable, cambiar un botón de color
+          requeria un proceso y unos protocolos muy largos. Yo tenía muchas ideas para simplificar y optimizar el código, pero era demasiado
+          arriesgado tocar una máquina en marcha que ya funcionaba.
+        </p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content g-wrapper">
+        <h3>FASE 4: EQUILIBRIO</h3>
+        <p>
+          Con todo lo vivido me he dado cuenta de muchas cosas, programar por programar lo puede aprender cualquiera, lo que a mi me fascina
+          va un poco más lejos.
+        </p>
+
+        <p>Para mi programar es una herramienta de creación, un puente entre las ideas y el mundo real.</p>
+        <p>
+          Me encanta que las cosas sean lo más eficientes posible, escribo código pensando en la sencillez y la elegancia, para que el
+          próximo que tenga que tocarlo piense "Coño, que ingenioso es esto".
+        </p>
+        <p>
+          Me gusta estar al dia de las últimas tecnologías que aparecen y no me importa rehacer procesos que ya funcionaban con tal de
+          buscar ese punto extra de excelencia.
+        </p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content g-wrapper">
+        <h3>FASE 5: EPIFANÍA</h3>
+        <p>
+          Ahora trabajo en Tramita, una inmobiliaria muy familiar de Santa Coloma, soy el único responsable de la parte tecnológica de la
+          empresa.
+        </p>
+        <p>
+          He de admitir que era una responsabilidad demasiado grande para lo que era, por eso ha sido imperativo cambiar y crecer como
+          profesional.
+        </p>
+        <p>
+          Probar cosas y formarse sin parar me han convertido en un todoterreno de la programación, ahora soy capaz de llevar un proyecto
+          web por todas las fases necesarias, (diseño, textos, ćodigo, servidores...)
+        </p>
+        <p>
+          Me he dado cuenta de que hay mucho más que escribir líneas de código, entender el por qué detrás de las páginas web que hago,
+          enforcarme en el resultado real:
+        </p>
+        <p>"Conectar tu mensaje al mundo con las personas indicadas"</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content g-wrapper">
+        <h3>FASE 6: FUTURO</h3>
+        <p>A nivel de programación he logrado dominar un stack muy minimalista basado en Astro, Svelte y Typescript</p>
+        <p>Ahora estoy con aprender a hacer textos de venta, diseño, marketing digital, entre otras cosas.</p>
+        <p>He encontrado un lugar para explaiarme y sacar a relucir mis virtudes.</p>
+        <p>
+          En cuanto a mi parte personal, estoy aprendiendo a gestionar y darle la vuelta a partes de mi que antiguamente me han machacado
+          bastante. Cosas como la obsesión, ansiedad al futuro o una introversión pronunciada, ya no son un problema sino mis armas más
+          preciadas para afrontar cualquier cosa que se me ponga por delante.
+        </p>
+      </div>
+    </div>
+  </HorizontalSlides>
 </Layout>
