@@ -8,20 +8,13 @@ import Menu from '@/components/Menu.svelte'
 <style lang="scss">
   .first-text {
     padding-top: 100px;
-    padding-bottom: 50px;
-    min-height: 100vh;
     background-color: white;
 
-    h3 {
+    h3,
+    h3 span {
       font-size: 30px;
       font-weight: bold;
       padding: 30px 0;
-    }
-
-    p,
-    h3,
-    b {
-      color: var(--colorBackground);
     }
 
     p {
@@ -30,8 +23,8 @@ import Menu from '@/components/Menu.svelte'
     }
 
     .bottom-wave {
-      transform: translateY(70px);
-      filter: drop-shadow(0 -10px 8px rgba(0, 0, 0, 0.3));
+      transform: translateY(10px);
+      filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.7));
     }
   }
 
@@ -65,25 +58,29 @@ import Menu from '@/components/Menu.svelte'
         Por eso mismo lo que sea que ofreces tiene que ser bueno, muy bueno, algo que ayude a las personas realmente, eso es el núcleo de
         todo.
       </p>
-      <p>Mi trabajo consiste en multiplicar esa esencia, llegar a más gente y dejar una huella en ellos.</p>
-      <p>¿Cómo? Haciendo que el envoltorio sea bonito, funcional, elegante y que transmita el mensaje que quieres dar.</p>
+      <p>Una web deberia servir para multiplicar esa esencia, llegar a más gente y dejar una huella en ellos.</p>
+      <p>Pero... ¿Cómo? Haciendo que el envoltorio sea bonito, funcional, elegante y que <b> transmita el mensaje que quieres dar.</b></p>
+      <p>Debo decir que personalmente me causa muchísima desconfianza investigar una empresa y ver que la web esta descuidada.</p>
+
       <p>
-        Personalmente me causa muchisima desconfianza entrar en una empresa y ver que la web esta descuidada, para quedarte en medias tintas
-        no hagas nada.
+        <b>Para quedarte en medias tintas no hagas nada.</b>
       </p>
 
       <p>Sino puedes provocar el efecto contrario y que tus visitantes piensen cosas estilo:</p>
-      <p>
+      <p style="color: var(--colorText2); font-style: italic;">
         "¿Si son chapuzas con esto, lo serán para todo?"<br />"¿Quién ha decidido hacer esto y quien ha dado el visto bueno?"<br />"¿Por qué
         son tan descuidados?"
       </p>
       <br />
-      <p>No trabajo con Wordpress, ni con plantillas, ni con el código de otros.</p>
+
       <p>
-        Actualmente estoy expandiendo mis horizontes al marketing digital, copywriting y diseño, para realmente abordar todo lo necesario
-        para que un proyecto prospere en el mundo digital.
+        Mi vocación consiste en <b>desactivar esas preguntas</b> y que los visitantes se <b> conviertan en clientes </b> a través de una experencia
+        de usuario memorable.
       </p>
-      <p>Así que aqui estoy, me apasiona programar y traer ideas al mundo real, eso es todo.</p>
+      <br />
+      <b>Mi receta:</b>
+      <p class="g-color">Zambullirme en tu sector, una web 100% a medida, textos de venta persuasivos y un diseño acorde a tu mensaje.</p>
+      <p style="font-size: 12px;">PD: No trabajo con Wordpress, ni con plantillas, ni con el código de otros.</p>
     </div>
 
     <svg class="bottom-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"

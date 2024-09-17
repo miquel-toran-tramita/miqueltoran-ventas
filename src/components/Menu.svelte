@@ -51,6 +51,7 @@
         font-size: 40px;
         font-family: 'Oswald';
         margin-left: 8px;
+        color: var(--colorText3);
 
         @include notDesktop {
           font-size: 20px !important;
@@ -63,6 +64,7 @@
         gap: 20px;
 
         a {
+          color: var(--colorText3);
           transition: 0.3s ease;
           font-family: 'Oswald';
           font-size: 20px;
@@ -75,7 +77,9 @@
 
 <div class="menu" class:active bind:this={HTMLMenu}>
   <div class="g-wrapper">
-    <h2 class="logo">Miquel Torán</h2>
+    <button on:click={() => window.scrollTo(0, 0)}>
+      <h2 class="logo">Miquel Torán</h2>
+    </button>
 
     <ul>
       <li>
