@@ -32,7 +32,7 @@
 
     &.active {
       transition: 0.3s ease;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.5);
 
       .logo,
       a {
