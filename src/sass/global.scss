@@ -3,10 +3,15 @@
 @import 'mixins.scss';
 
 .g-title {
-  font-size: 30px;
   padding: 30px 0;
-  color: var(--colorText);
+  font-size: 40px;
   font-family: 'Oswald';
+  color: var(--colorText);
+
+  * {
+    font-family: 'Oswald';
+    font-size: 40px;
+  }
 
   &.center {
     text-align: center;

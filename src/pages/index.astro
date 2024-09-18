@@ -4,18 +4,20 @@ import HorizontalSlides from '@/components/HorizontalSlides.svelte'
 import Hero from '@/components/Hero.svelte'
 import Menu from '@/components/Menu.svelte'
 import Socials from '@/components/Socials.svelte'
+import Web from '@/components/Web.svelte'
 ---
 
 <style lang="scss">
   .first-text {
-    padding-top: 100px;
+    padding: 100px 0;
     background-color: white;
 
     h3,
     h3 span {
-      font-size: 30px;
       font-weight: bold;
       padding: 30px 0;
+      background-color: white;
+      padding: 20px 0;
     }
 
     p {
@@ -51,50 +53,52 @@ import Socials from '@/components/Socials.svelte'
   <Menu client:load />
   <Hero client:load />
 
-  <div class="first-text">
-    <div class="g-wrapper">
-      <h3 class="g-title">Las páginas web <span class="g-color">no sirven para nada.</span></h3>
+  <Web>
+    <div class="first-text">
+      <div class="g-wrapper">
+        <h3 class="g-title">Las páginas web <span class="g-color">no sirven para nada.</span></h3>
 
-      <p>Me explico.</p>
+        <p>Me explico.</p>
 
-      <p>
-        Las páginas web <b>por si solas</b> no sirven para nada.
-      </p>
-      <p>Son un medio para comunicar un mensaje, un escaparte al mundo entero, una forma de conectar puntos.</p>
-      <p>
-        Por eso mismo lo que sea que ofreces tiene que ser bueno, muy bueno, algo que ayude realmente a las personas, eso es el núcleo de
-        todo.
-      </p>
-      <p>Teniendo eso, una web bien hecha sirve para multiplicar esa esencia, llegar a más gente y dejar una huella en ellos.</p>
-      <p>Pero... ¿Cómo? Haciendo que el envoltorio sea bonito, funcional, elegante y que <b> transmita el mensaje que quieres dar.</b></p>
-      <p>Debo decir que personalmente me causa muchísima desconfianza investigar una empresa y ver que la web esta descuidada.</p>
+        <p>
+          Las páginas web <b>por si solas</b> no sirven para nada.
+        </p>
+        <p>Son un medio para comunicar un mensaje, un escaparte al mundo entero, una forma de conectar puntos.</p>
+        <p>
+          Por eso mismo lo que sea que ofreces tiene que ser bueno, muy bueno, algo que ayude realmente a las personas, eso es el núcleo de
+          todo.
+        </p>
+        <p>Teniendo eso, una web bien hecha sirve para multiplicar esa esencia, llegar a más gente y dejar una huella en ellos.</p>
+        <p>Pero... ¿Cómo? Haciendo que el envoltorio sea bonito, funcional, elegante y que <b> transmita el mensaje que quieres dar.</b></p>
+        <p>Debo decir que personalmente me causa muchísima desconfianza investigar una empresa y ver que la web esta descuidada.</p>
 
-      <p>
-        <b>Para quedarte en medias tintas no hagas nada.</b>
-      </p>
+        <p>
+          <b>Para quedarte en medias tintas no hagas nada.</b>
+        </p>
 
-      <p>Si no, puedes provocar el efecto contrario y que tus visitantes piensen cosas estilo:</p>
-      <p style="color: var(--colorText2); font-style: italic;">
-        "¿Si son chapuzas con esto, lo serán para todo?"<br />"¿Quién ha decidido hacer esto y quién ha dado el visto bueno?"<br />"¿Por qué
-        son tan descuidados?"
-      </p>
-      <br />
+        <p>Si no, puedes provocar el efecto contrario y que tus visitantes piensen cosas estilo:</p>
+        <p style="color: var(--colorText2); font-style: italic;">
+          "¿Si son chapuzas con esto, lo serán para todo?"<br />"¿Quién ha decidido hacer esto y quién ha dado el visto bueno?"<br />"¿Por
+          qué son tan descuidados?"
+        </p>
+        <br />
 
-      <p>
-        Mi vocación consiste en <b>desactivar esas preguntas</b> y que los visitantes se <b> conviertan en clientes </b> a través de una experencia
-        de usuario memorable.
-      </p>
-      <br />
-      <b>Mi receta:</b>
-      <p class="g-color">Zambullirme en tu sector, una web 100% a medida, textos de venta persuasivos y un diseño acorde a tu mensaje.</p>
-      <p style="font-size: 14px;">
-        PD: No trabajo con Wordpress, ni con plantillas, ni con el código de otros. <br />PD2: Si crees que podemos llevarnos bien, aquí
-        abajo te dejo cómo contactarme.
-      </p>
+        <p>
+          Mi vocación consiste en <b>desactivar esas preguntas</b> y que los visitantes se <b> conviertan en clientes </b> a través de una experencia
+          de usuario memorable.
+        </p>
+        <br />
+        <b>Mi receta:</b>
+        <p class="g-color">Zambullirme en tu sector, una web 100% a medida, textos de venta persuasivos y un diseño acorde a tu mensaje.</p>
+        <p style="font-size: 14px;">
+          PD: No trabajo con Wordpress, ni con plantillas, ni con el código de otros. <br />PD2: Si crees que podemos llevarnos bien, aquí
+          abajo te dejo cómo contactarme.
+        </p>
+      </div>
+
+      <Socials />
     </div>
-
-    <Socials />
-  </div>
+  </Web>
 
   <HorizontalSlides>
     <div class="slide">
@@ -107,8 +111,8 @@ import Socials from '@/components/Socials.svelte'
         </p>
 
         <p>
-          En secundaria, por inercia elegí una optativa de programación, pocos meses después me llamaban la atención por avanzar mi proyecto
-          de programación (usando Scratch) en las otras clases.
+          En secundaria, por inercia elegí una optativa de programación, pocos meses después me echaban la bronca por avanzar mi proyecto de
+          programación (usando Scratch) en las otras clases.
         </p>
 
         <p>
@@ -122,15 +126,18 @@ import Socials from '@/components/Socials.svelte'
         <h3>FASE 2: DESPERTAR</h3>
         <p>
           Con esa experencia no me costó nada elegir la FP de Desarrollo de Aplicaciones Web, fué una etapa bastante placentera, aprender
-          pasó de ser un coñazo a algo valioso. Quise aprovechar esa comodidad y me aventuré a meterme en el Erasmus que ofrecían. Estuve
-          viviendo dos meses en Varsovia trabajando de técnico inforático en una empresa polaca. Finalmente culminé mis estudios con un
-          proyecto de fin de curso muy especial.
+          pasó de ser un coñazo a algo valioso. Quise aprovechar esa comodidad y me aventuré a meterme en el Erasmus que ofrecían.
+        </p>
+
+        <p>
+          Estuve viviendo dos meses en Varsovia trabajando de técnico informático en una empresa polaca. Finalmente culminé mis estudios con
+          un proyecto de fin de curso muy especial.
         </p>
 
         <p>
           Aprovechando mi faceta ajedrecista, hice un Ajedrez en 3D que asombró a toda la clase, Aje3d se llamaba (desbordaba ingenio
-          también). Lo hice yo solo (en ese entonces no se me daba muy bien trabajar en equipo) y me pusieron un rotundo 10, hasta el punto
-          que años mas tarde me llamaron para enseñarlo y dar una charla a las futuras generaciones de DAW de "La Pineda Badalona".
+          también). Me pusieron un rotundo 10, hasta el punto que años mas tarde me llamaron para enseñarlo y dar una charla a las futuras
+          generaciones del grado superior en "La Pineda Badalona".
         </p>
       </div>
     </div>
@@ -138,10 +145,10 @@ import Socials from '@/components/Socials.svelte'
       <div class="slide-content g-wrapper">
         <h3>FASE 3: CHASCO</h3>
         <p>
-          Entrar al mundo laboral fué una decepción, no tanto por las empresas con las que trabajé y que me siento agradecido por haberme
-          dado esas oportunidades y ser parte de mi crecimiento. Trabajé arreglando routers y de programador con Wordpress, pero no
-          encontraba nada que me llenase entonces fué cuando dejé mi último empleo y me tomé un año sabático estudiando nuevas tecnologías
-          de programación que no me enseñaron en la FP pero que ví que las empresas demandaban.
+          Entrar al mundo laboral fué una decepción, no tanto por las empresas con las que trabajé (Que agradezco profundamente el
+          crecimiento que tuve con ellos). Trabajé arreglando routers y de programador con Wordpress, pero no encontraba nada que me llenase
+          entonces fué cuando dejé mi último empleo y me tomé un año sabático estudiando nuevas tecnologías de programación que no me
+          enseñaron en la FP pero que ví que las empresas demandaban.
         </p>
 
         <p>Paralelamente también descubrí mi amor por la lectura, en especial por libros de desarrollo personal, salud y psicología.</p>
@@ -197,14 +204,17 @@ import Socials from '@/components/Socials.svelte'
           Me he dado cuenta de que hay mucho más que escribir líneas de código, entender el por qué detrás de las páginas web que hago,
           enforcarme en el resultado real:
         </p>
-        <p>"Conectar tu mensaje al mundo con las personas indicadas"</p>
+        <p>"Conectar un mensaje al mundo con las personas indicadas"</p>
       </div>
     </div>
     <div class="slide">
       <div class="slide-content g-wrapper">
         <h3>FASE 6: FUTURO</h3>
         <p>A nivel de programación he logrado dominar un stack muy minimalista basado en Astro, Svelte y Typescript</p>
-        <p>Ahora estoy con aprender a hacer textos de venta, diseño, marketing digital, entre otras cosas.</p>
+        <p>
+          Ahora estoy enfocado en convertirme en un Da Vinci del mundo digital. Mis formaciones ininterrumpidas siguen con textos de venta,
+          diseño, marketing digital, entre otras cosas.
+        </p>
         <p>He encontrado un lugar para explaiarme y sacar a relucir mis virtudes.</p>
         <p>
           En cuanto a mi parte personal, estoy aprendiendo a gestionar y darle la vuelta a partes de mi que antiguamente me han machacado

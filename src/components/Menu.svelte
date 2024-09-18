@@ -17,14 +17,17 @@
   @import 'src/sass/mixins.scss';
 
   .menu {
-    position: sticky;
-    top: 0px;
     width: 100%;
-    margin-top: calc(20vh - 100px);
+    margin-top: calc(25vh - 100px);
     height: 100px;
     z-index: 10;
     //border-bottom: 1px solid var(--colorText);
-    //backdrop-filter: grayscale(1);
+
+    @include desktop {
+      position: sticky;
+      top: 0px;
+      backdrop-filter: grayscale(1);
+    }
 
     &.active {
       a {
