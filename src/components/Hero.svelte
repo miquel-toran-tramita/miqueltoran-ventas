@@ -19,7 +19,7 @@
 
   .hero {
     position: relative;
-    height: 70vh;
+    min-height: 80vh;
     z-index: 2;
 
     .g-wrapper {
@@ -31,10 +31,21 @@
       font-size: 200px;
       font-family: 'Oswald';
       line-height: 1;
-      text-transform: uppercase;
 
       @include notDesktop {
         font-size: 60px;
+      }
+    }
+
+    .potenciador {
+    }
+
+    .web {
+      font-size: 300px;
+      filter: brightness(0.7);
+
+      @include notDesktop {
+        font-size: 200px;
       }
     }
 
@@ -69,34 +80,13 @@
       }
     }
   }
-
-  .waves {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    margin-top: -50px;
-    z-index: 0;
-
-    svg {
-      filter: drop-shadow(0 10px 7px rgba(0, 0, 0, 0.3));
-
-      path {
-        transition: 1s ease-in-out;
-      }
-    }
-  }
 </style>
 
 <div class="hero">
   <div class="g-wrapper">
     <h1>
-      <span class="reveal">Potenciador</span>
-      <span class="reveal delay">Digital</span>
+      <span class="reveal potenciador">POTENCIADOR</span>
+      <span class="reveal delay web">WEB</span>
     </h1>
   </div>
-</div>
-
-<div class="waves">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="var(--colorBackground)" fill-opacity="1" d={wave}></path></svg>
 </div>

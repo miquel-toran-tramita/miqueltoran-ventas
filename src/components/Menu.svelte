@@ -20,21 +20,13 @@
     position: sticky;
     top: 0px;
     width: 100%;
-    backdrop-filter: blur(2px);
-    margin-top: calc(30vh - 60px);
-    height: 80px;
+    margin-top: calc(20vh - 100px);
+    height: 100px;
     z-index: 10;
-    background-color: var(--colorBackground);
-
-    .g-wrapper {
-      max-width: 1200px;
-    }
+    //border-bottom: 1px solid var(--colorText);
+    //backdrop-filter: grayscale(1);
 
     &.active {
-      transition: 0.3s ease;
-      background-color: rgba(0, 0, 0, 0.5);
-
-      .logo,
       a {
         opacity: 1 !important;
       }
@@ -45,13 +37,18 @@
       justify-content: space-between;
       align-items: center;
       height: 100%;
+      max-width: 1200px;
+
+      .logo,
+      a {
+        color: var(--colorText3);
+      }
 
       .logo {
         transition: 0.3s ease;
         font-size: 40px;
         font-family: 'Oswald';
         margin-left: 8px;
-        color: var(--colorText3);
 
         @include notDesktop {
           font-size: 20px !important;
@@ -64,10 +61,9 @@
         gap: 20px;
 
         a {
-          color: var(--colorText3);
           transition: 0.3s ease;
           font-family: 'Oswald';
-          font-size: 20px;
+          font-size: 30px;
           opacity: 0;
         }
       }
@@ -80,14 +76,5 @@
     <button on:click={() => window.scrollTo(0, 0)}>
       <h2 class="logo">Miquel Torán</h2>
     </button>
-
-    <ul>
-      <li>
-        <a href="">Inicio</a>
-      </li>
-      <li>
-        <a href="">Que hago</a>
-      </li>
-    </ul>
   </div>
 </div>
