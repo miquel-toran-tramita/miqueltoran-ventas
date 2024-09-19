@@ -8,31 +8,53 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background-image: url('/assets/bg3.png');
     filter: invert(1);
     opacity: 0.1;
     background-size: cover;
     background-position: center;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
   }
 
   .hero {
     position: relative;
-    min-height: 75vh;
-    z-index: 2;
+    height: 150vh;
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
+    background-color: var(--colorBackground);
+    overflow: hidden;
 
     .g-wrapper {
       max-width: 1200px;
     }
 
-    h1 span {
-      display: block;
-      font-size: 200px;
-      font-family: 'Oswald';
-      line-height: 1;
+    .first-impact {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .logo {
+        transition: 0.3s ease;
+        font-size: 40px;
+        font-family: 'Oswald';
+        margin-left: 8px;
+        color: var(--colorText3);
 
-      @include notDesktop {
-        font-size: 60px;
+        @include notDesktop {
+          font-size: 20px !important;
+        }
+      }
+
+      h1 span {
+        display: block;
+        font-size: 200px;
+        font-family: 'Oswald';
+        line-height: 1;
+
+        @include notDesktop {
+          font-size: 60px;
+        }
       }
     }
 
@@ -81,9 +103,12 @@
 <div class="bg"></div>
 <div class="hero">
   <div class="g-wrapper">
-    <h1>
-      <span class="reveal potenciador">POTENCIADOR</span>
-      <span class="reveal delay web">WEB</span>
-    </h1>
+    <div class="first-impact">
+      <h2 class="logo">Miquel Torán</h2>
+      <h1>
+        <span class="reveal potenciador">POTENCIADOR</span>
+        <span class="reveal delay web">WEB</span>
+      </h1>
+    </div>
   </div>
 </div>

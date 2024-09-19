@@ -1,66 +1,105 @@
+<script lang="ts">
+  import Svg from '@/components/Svg.svelte'
+</script>
+
 <style lang="scss">
-  .web-container {
-    background-color: white;
-    width: 100%;
+  .browser {
+    position: relative;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 12px 12px;
+    overflow: hidden;
+    padding: 0;
+    transform: translateY(-50vh);
+    z-index: 5;
+    .browser-topbar {
+      width: 100%;
+      height: 50px;
+      background-color: var(--colorBrandSoft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-    .web {
-      border: 2px solid red;
-      border-radius: 8px;
-      padding: 0;
+      .labels {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 5px;
 
-      .window-container {
-        margin: 10px;
-        overflow: hidden;
-        width: 200px;
+        .label {
+          display: flex;
+          align-items: center;
+          padding: 0 20px;
+          width: 100%;
+          max-width: 200px;
+          min-width: 100px;
 
-        .window {
-          position: relative;
-          background-color: var(--colorBrand);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
           border-radius: 8px;
-          height: 50px;
-          width: calc(100% - 30px);
+          height: 40px;
+          font-size: 14px;
+          color: white;
 
-          &.secondary {
-            transform: translateX(15px);
-            &:after {
-              content: '';
-              position: absolute;
-              width: 50px;
-              height: 150%;
-              border-radius: 8px;
-              background-color: var(--colorBrand);
-              filter: brightness(0.7);
-
-              top: 4px;
-              transform: rotate(30deg);
-            }
-          }
-
-          &:before {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 150%;
-            border-radius: 8px;
+          &.active {
             background-color: var(--colorBrand);
-            right: -20px;
-            top: 4px;
-            transform: rotate(-30deg);
           }
         }
       }
+
+      .browser-tools {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 15px;
+        :global(svg) {
+          fill: white;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    .tools {
+      background-color: var(--colorBrand);
+      height: 50px;
+      display: flex;
+      align-items: center;
+
+      .url-bar {
+        background-color: white;
+        width: 100%;
+        margin: 0 15px;
+        border-radius: 8px;
+        padding: 5px 20px;
+      }
+    }
+    .content {
+      margin-top: -1px;
     }
   }
 </style>
 
-<div class="web-container">
-  <div class="web g-wrapper">
-    <div class="window-container">
-      <div class="window" />
+<div class="g-wrapper">
+  <div class="browser">
+    <div class="browser-topbar">
+      <div class="labels">
+        <div class="label">Reflexión</div>
+        <div class="label active">Mi historia</div>
+      </div>
+
+      <div class="browser-tools">
+        <Svg name="minimize" />
+        <Svg name="windows" />
+        <Svg name="close" />
+      </div>
     </div>
-    <div class="window-container">
-      <div class="window secondary" />
+    <div class="tools">
+      <div class="url-bar">www.miqueltoran.com</div>
     </div>
-    <slot></slot>
+    <div class="content">
+      <slot />
+    </div>
   </div>
 </div>

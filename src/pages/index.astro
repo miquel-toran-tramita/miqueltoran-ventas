@@ -9,14 +9,14 @@ import Web from '@/components/Web.svelte'
 
 <style lang="scss">
   .first-text {
-    padding: 100px 0;
-    background-color: white;
-
+    padding: 20px;
+    padding-bottom: 50px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
     h3,
     h3 span {
       font-weight: bold;
       padding: 30px 0;
-      background-color: white;
       padding: 20px 0;
     }
 
@@ -50,10 +50,9 @@ import Web from '@/components/Web.svelte'
 </style>
 
 <Layout title="Miquel Torán">
-  <Menu client:load />
   <Hero client:load />
 
-  <Web>
+  <Web client:load>
     <div class="first-text">
       <div class="g-wrapper">
         <h3 class="g-title">Las páginas web <span class="g-color">no sirven para nada.</span></h3>
