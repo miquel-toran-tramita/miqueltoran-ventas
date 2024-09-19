@@ -33,6 +33,7 @@
         padding-left: 10px;
 
         .label {
+          transition: 0.5s ease;
           display: flex;
           align-items: center;
           gap: 5px;
@@ -52,9 +53,11 @@
           background-color: var(--colorBrandSoft);
 
           @include notDesktop {
-            width: 30px;
-            h5 {
-              display: none;
+            &:not(.active) {
+              width: 30px;
+              h5 {
+                display: none;
+              }
             }
           }
 
@@ -83,6 +86,10 @@
           fill: white;
           width: 20px;
           height: 20px;
+        }
+
+        @include notDesktop {
+          gap: 2px;
         }
       }
     }
