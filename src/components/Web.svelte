@@ -1,5 +1,7 @@
 <script lang="ts">
   import Svg from '@/components/Svg.svelte'
+
+  export let activeTab: string
 </script>
 
 <style lang="scss">
@@ -13,7 +15,7 @@
     z-index: 5;
     .browser-topbar {
       width: 100%;
-      height: 50px;
+      height: 60px;
       background-color: var(--colorBrandSoft);
       display: flex;
       justify-content: space-between;
@@ -24,14 +26,15 @@
         align-items: center;
         width: 100%;
         gap: 5px;
+        padding-left: 10px;
 
         .label {
           display: flex;
           align-items: center;
-          padding: 0 20px;
+          padding: 0 15px;
           width: 100%;
           max-width: 200px;
-          min-width: 100px;
+          min-width: 50px;
           cursor: pointer;
 
           white-space: nowrap;
@@ -42,9 +45,10 @@
           height: 40px;
           font-size: 14px;
           color: white;
+          background-color: var(--colorBrandSoft);
 
-          &.hover {
-            border: 2px solid red;
+          &:not(.active):hover {
+            filter: brightness(1.2);
           }
 
           &.active {
@@ -58,7 +62,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        padding: 0 15px;
+        padding: 0 10px;
         :global(svg) {
           fill: white;
           width: 20px;
@@ -75,13 +79,14 @@
       .url-bar {
         background-color: white;
         width: 100%;
-        margin: 0 15px;
+        margin: 0 10px;
         border-radius: 8px;
-        padding: 5px 20px;
+        padding: 5px 16px;
       }
     }
     .content {
       margin-top: -1px;
+      min-height: 100vh;
     }
   }
 </style>
@@ -90,8 +95,10 @@
   <div class="browser">
     <div class="browser-topbar">
       <div class="labels">
-        <div class="label">Reflexión</div>
-        <div class="label active">Mi historia</div>
+        <button class:active={activeTab === 'TextoVenta'} class="label" on:click={() => (activeTab = 'TextoVenta')}
+          >💻 Cómo hacer una web</button
+        >
+        <button class:active={activeTab === 'Historia'} class="label" on:click={() => (activeTab = 'Historia')}>📜 Mi historia</button>
       </div>
 
       <div class="browser-tools">
