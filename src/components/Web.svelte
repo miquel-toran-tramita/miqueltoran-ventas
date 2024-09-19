@@ -32,6 +32,7 @@
           width: 100%;
           max-width: 200px;
           min-width: 100px;
+          cursor: pointer;
 
           white-space: nowrap;
           overflow: hidden;
@@ -41,6 +42,10 @@
           height: 40px;
           font-size: 14px;
           color: white;
+
+          &.hover {
+            border: 2px solid red;
+          }
 
           &.active {
             background-color: var(--colorBrand);
