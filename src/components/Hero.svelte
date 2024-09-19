@@ -6,7 +6,6 @@
 
   .hero {
     position: relative;
-    background-color: var(--colorBackground);
     overflow: hidden;
 
     .g-wrapper {
@@ -44,7 +43,7 @@
 
     .web {
       font-size: 300px;
-      filter: brightness(0.7);
+      filter: brightness(0.8);
 
       @include notDesktop {
         font-size: 200px;
@@ -82,13 +81,6 @@
       }
     }
   }
-
-  .bg {
-    position: absolute;
-    height: 40vh;
-    width: 100%;
-    background-color: var(--colorBackground);
-  }
 </style>
 
 <div class="hero">
@@ -102,4 +94,3 @@
     </div>
   </div>
 </div>
-<div class="bg"></div>
