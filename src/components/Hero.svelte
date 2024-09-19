@@ -4,24 +4,8 @@
 <style lang="scss">
   @import 'src/sass/mixins.scss';
 
-  .bg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 150vh;
-    background-image: url('/assets/bg3.png');
-    filter: invert(1);
-    opacity: 0.1;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
-  }
-
   .hero {
     position: relative;
-    height: 150vh;
-    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
     background-color: var(--colorBackground);
     overflow: hidden;
 
@@ -30,10 +14,10 @@
     }
 
     .first-impact {
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      height: 80vh;
       .logo {
         transition: 0.3s ease;
         font-size: 40px;
@@ -46,7 +30,7 @@
         }
       }
 
-      h1 span {
+      .title span {
         display: block;
         font-size: 200px;
         font-family: 'Oswald';
@@ -98,17 +82,24 @@
       }
     }
   }
+
+  .bg {
+    position: absolute;
+    height: 40vh;
+    width: 100%;
+    background-color: var(--colorBackground);
+  }
 </style>
 
-<div class="bg"></div>
 <div class="hero">
   <div class="g-wrapper">
     <div class="first-impact">
       <h2 class="logo">Miquel Torán</h2>
-      <h1>
+      <h1 class="title">
         <span class="reveal potenciador">POTENCIADOR</span>
         <span class="reveal delay web">WEB</span>
       </h1>
     </div>
   </div>
 </div>
+<div class="bg"></div>

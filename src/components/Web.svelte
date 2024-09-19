@@ -3,20 +3,40 @@
 
   export let activeTab: string
   export let tabList: any
+
+  let minimize: boolean = false
+  let close: boolean = false
+  let windows: boolean = false
 </script>
 
 <style lang="scss">
   @import 'src/sass/mixins.scss';
   .browser {
     position: relative;
-    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.7);
     border-radius: 12px 12px;
+    margin-top: 50px;
     overflow: hidden;
     padding: 0;
-    transform: translateY(-50vh);
     z-index: 5;
     backdrop-filter: blur(10px);
     height: fit-content;
+
+    &.windows {
+      transform: scale(0.7);
+    }
+
+    &.close {
+      opacity: 0.2;
+    }
+
+    &.minimize {
+      .content {
+        height: 0;
+      }
+    }
+
     .browser-topbar {
       width: 100%;
       height: 60px;
@@ -36,16 +56,12 @@
           transition: 0.5s ease;
           display: flex;
           align-items: center;
-          gap: 5px;
-          padding: 0 15px;
+          gap: 10px;
+          padding: 0 10px;
           width: 100%;
           max-width: 200px;
-          min-width: 50px;
+          min-width: 40px;
           cursor: pointer;
-
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
 
           border-radius: 8px;
           height: 40px;
@@ -61,9 +77,16 @@
             }
           }
 
+          :global(svg) {
+            flex-shrink: 0;
+          }
+
           h5 {
             color: white;
             line-height: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
 
           &:not(.active):hover {
@@ -80,12 +103,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-right: 10px;
         gap: 10px;
-        padding: 0 10px;
         :global(svg) {
           fill: white;
           width: 20px;
           height: 20px;
+        }
+
+        button {
+          display: flex;
+          align-items: center;
+          height: 100%;
         }
 
         @include notDesktop {
@@ -104,14 +133,14 @@
         width: 100%;
         margin: 0 10px;
         border-radius: 8px;
-        padding: 5px 16px;
+        padding: 5px 12px;
       }
     }
   }
 </style>
 
 <div class="g-wrapper">
-  <div class="browser">
+  <div class="browser" class:minimize class:close class:windows>
     <div class="browser-topbar">
       <div class="labels">
         {#each tabList as tab}
@@ -123,9 +152,17 @@
       </div>
 
       <div class="browser-tools">
-        <Svg name="minimize" />
-        <Svg name="windows" />
-        <Svg name="close" />
+        <button on:click={() => (minimize = !minimize)}>
+          <Svg name="minimize" />
+        </button>
+
+        <button on:click={() => (windows = !windows)}>
+          <Svg name="windows" />
+        </button>
+
+        <button on:click={() => (close = !close)}>
+          <Svg name="close" />
+        </button>
       </div>
     </div>
     <div class="tools">

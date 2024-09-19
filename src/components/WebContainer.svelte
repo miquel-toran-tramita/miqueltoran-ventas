@@ -20,8 +20,9 @@
 
 <style lang="scss">
   iframe {
+    display: block;
     width: 100%;
-    height: 70vh;
+    height: 75vh;
   }
 </style>
 
@@ -30,6 +31,6 @@
     <TextoVenta />
   {/if}
   {#if activeTab === tabList[1].title}
-    <iframe src="https://nousamoscorbata.vercel.app/" frameborder="0" allowfullscreen></iframe>
+    <iframe title="tramita" src="https://nousamoscorbata.vercel.app/" frameborder="0" allowfullscreen></iframe>
   {/if}
 </Web>

@@ -7,7 +7,7 @@
 <style lang="scss">
   .socials {
     display: flex;
-    padding-top: 50px;
+    padding: 20px 0;
     gap: 20px;
 
     img {
@@ -23,7 +23,7 @@
   }
 </style>
 
-<div class="socials g-wrapper">
+<div class="socials">
   <a href="https://www.linkedin.com/in/miquel-toran-surina/" target="_blank" title="LinkedIn">
     <img src="/assets/linkedin.png" alt="Linkedin" height="50px" />
   </a>

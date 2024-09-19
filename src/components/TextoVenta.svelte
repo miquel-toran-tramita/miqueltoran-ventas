@@ -11,6 +11,10 @@
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.9);
 
+    .g-wrapper {
+      max-width: 720px;
+    }
+
     @include notDesktop {
       padding: 0px;
       padding-top: 20px;
@@ -24,6 +28,16 @@
     p {
       padding: 10px 0;
       text-align: justify;
+    }
+
+    .pd {
+      font-size: 14px;
+      padding: 30px 0;
+
+      * {
+        display: inline-block;
+        font-size: 14px;
+      }
     }
   }
 </style>
@@ -50,7 +64,7 @@
       <b>Para quedarte en medias tintas no hagas nada.</b>
     </p>
 
-    <p>Si no, puedes provocar el efecto contrario y que tus visitantes piensen cosas estilo:</p>
+    <p>Si no, puedes provocar el efecto contrario y que tus visitantes piensen algo como...</p>
     <p style="color: var(--colorText2); font-style: italic;">
       "¿Si son chapuzas con esto, lo serán para todo?"<br />"¿Quién ha decidido hacer esto y quién ha dado el visto bueno?"<br />"¿Por qué
       son tan descuidados?"
@@ -64,11 +78,11 @@
     <br />
     <b>Mi receta:</b>
     <p class="g-color">Zambullirme en tu sector, una web 100% a medida, textos de venta persuasivos y un diseño acorde a tu mensaje.</p>
-    <p style="font-size: 14px;">
-      PD: No trabajo con Wordpress, ni con plantillas, ni con el código de otros. <br />PD2: Si crees que podemos llevarnos bien, aquí abajo
-      te dejo cómo contactarme.
+    <p class="pd">
+      PD: No trabajo con Wordpress, ni con plantillas, ni con el código de otros.
+      <br />PD2: En el navegador web que me he inventado puedes ver algunos ejemplos de webs de negocios reales.
+      <br />PD3: Si crees que podemos llevarnos bien, <span class="g-color">aquí abajo</span> te dejo cómo contactarme.
     </p>
+    <Socials />
   </div>
-
-  <Socials />
 </div>
