@@ -4,17 +4,15 @@
 
 .g-title {
   padding: 30px 0;
-  font-size: 40px;
+  font-size: 60px;
   font-family: 'Oswald';
   color: var(--colorText);
 
   * {
+    font-size: 60px;
     font-family: 'Oswald';
-    font-size: 40px;
-  }
-
-  &.center {
-    text-align: center;
+    color: var(--colorText);
+    line-height: 1;
   }
 
   @include notDesktop {

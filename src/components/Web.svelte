@@ -2,9 +2,11 @@
   import Svg from '@/components/Svg.svelte'
 
   export let activeTab: string
+  export let tabList: any
 </script>
 
 <style lang="scss">
+  @import 'src/sass/mixins.scss';
   .browser {
     position: relative;
     box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.3);
@@ -13,6 +15,8 @@
     padding: 0;
     transform: translateY(-50vh);
     z-index: 5;
+    backdrop-filter: blur(10px);
+    height: fit-content;
     .browser-topbar {
       width: 100%;
       height: 60px;
@@ -31,6 +35,7 @@
         .label {
           display: flex;
           align-items: center;
+          gap: 5px;
           padding: 0 15px;
           width: 100%;
           max-width: 200px;
@@ -44,8 +49,19 @@
           border-radius: 8px;
           height: 40px;
           font-size: 14px;
-          color: white;
           background-color: var(--colorBrandSoft);
+
+          @include notDesktop {
+            width: 30px;
+            h5 {
+              display: none;
+            }
+          }
+
+          h5 {
+            color: white;
+            line-height: 1;
+          }
 
           &:not(.active):hover {
             filter: brightness(1.2);
@@ -84,10 +100,6 @@
         padding: 5px 16px;
       }
     }
-    .content {
-      margin-top: -1px;
-      min-height: 100vh;
-    }
   }
 </style>
 
@@ -95,10 +107,12 @@
   <div class="browser">
     <div class="browser-topbar">
       <div class="labels">
-        <button class:active={activeTab === 'TextoVenta'} class="label" on:click={() => (activeTab = 'TextoVenta')}
-          >💻 Cómo hacer una web</button
-        >
-        <button class:active={activeTab === 'Historia'} class="label" on:click={() => (activeTab = 'Historia')}>📜 Mi historia</button>
+        {#each tabList as tab}
+          <button class="label" class:active={activeTab === tab.title} on:click={() => (activeTab = tab.title)}>
+            <Svg name={tab.icon} fill="white" width="20" height="20" />
+            <h5>{tab.title}</h5>
+          </button>
+        {/each}
       </div>
 
       <div class="browser-tools">
@@ -108,7 +122,7 @@
       </div>
     </div>
     <div class="tools">
-      <div class="url-bar">www.miqueltoran.com</div>
+      <div class="url-bar">{tabList.find((tab) => activeTab === tab.title).url}</div>
     </div>
     <div class="content">
       <slot />

@@ -3,16 +3,22 @@
 </script>
 
 <style lang="scss">
+  @import 'src/sass/mixins.scss';
   .texto-venta {
     padding: 20px;
+    padding-top: 20px;
     padding-bottom: 50px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.9);
-    h3,
-    h3 span {
-      font-weight: bold;
-      padding: 30px 0;
-      padding: 20px 0;
+
+    @include notDesktop {
+      padding: 0px;
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+
+    span {
+      display: block;
     }
 
     p {
